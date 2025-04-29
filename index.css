@@ -1,0 +1,86 @@
+:root {
+  --light-pink: 250, 229, 229;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+
+  font-size: 1.6rem;
+  font-family: monospace;
+
+  background-color: rgb(var(--light-pink));
+
+  box-sizing: border-box;
+}
+
+ul {
+  width: 45vmin;
+  height: 70vmin;
+  padding: 3.2rem;
+
+  background-color: white;
+  border-radius: 12px;
+
+  list-style-type: none;
+  overflow-y: scroll;
+}
+
+ul li:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  padding: 3.2rem;
+
+  font-size: 2rem;
+
+  background-color: rgb(var(--light-pink));
+  border-radius: 12px;
+
+  animation: enter .5s ease-in-out forwards;
+  animation-delay: var(--delay, 0);
+}
+
+li .img {
+  --dimensions: 10rem;
+
+  content: "";
+  height: var(--dimensions);
+  min-width: var(--dimensions);
+  flex-grow: 1;
+  
+  background-color: rgb(226, 135, 135);
+  border-radius: 12px;
+}
+
+li p {
+  padding-top: 1.2rem;
+
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}
